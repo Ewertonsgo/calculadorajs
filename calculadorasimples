@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora Simples</title>
+</head>
+<body>
+    <h1>Calculadora Simples</h1>
+    <p>Insira dois valores e um operador para realizar cálculos:</p>
+    <input type="text" id="valor1" placeholder="Digite o primeiro valor">
+    <input type="text" id="valor2" placeholder="Digite o segundo valor">
+    <input type="text" id="operador" placeholder="Digite o operador (+, -, *, /)">
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            var valor1 = parseFloat(document.getElementById("valor1").value);
+            var valor2 = parseFloat(document.getElementById("valor2").value);
+            var operador = document.getElementById("operador").value;
+
+            var resultado;
+
+            if (operador === '+') {
+                resultado = valor1 + valor2;
+            } else if (operador === '-') {
+                resultado = valor1 - valor2;
+            } else if (operador === '*') {
+                resultado = valor1 * valor2;
+            } else if (operador === '/') {
+                resultado = valor1 / valor2;
+            }
+
+            if (resultado !== undefined) {
+                document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+            } else {
+                document.getElementById("resultado").innerHTML = "Operador inválido";
+            }
+        }
+    </script>
+</body>
+</html>
